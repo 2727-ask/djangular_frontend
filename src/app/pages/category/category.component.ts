@@ -14,7 +14,7 @@ export class CategoryComponent implements OnInit {
   }
 
   onSubmit(formData:NgForm){
-    console.log(formData.value)
+    console.log(formData)
   }
 
 }
