@@ -1,0 +1,17 @@
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  #logo {
+    background: #cf27a8;
+    background: -webkit-linear-gradient(to right, #cf27a8 28%, #3276cf 87%);
+    background: -moz-linear-gradient(to right, #cf27a8 28%, #3276cf 87%);
+    background: linear-gradient(to right, #cf27a8 28%, #3276cf 87%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .side-nav{
+      background-color: black;
+  }

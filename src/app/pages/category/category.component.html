@@ -1,0 +1,33 @@
+<div class="container category">
+    <h3><b>Category</b></h3>
+    <hr />
+    <form (ngSubmit)="onSubmit(formData)" #formData="ngForm">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Category Name</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="Category eg: Programming"
+          ngModel
+          name="title"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >Category Description</label
+        >
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+          ngModel
+          name="description"
+        ></textarea>
+      </div>
+      <button type="button" class="btn btn-primary" type="submit" [disabled]="!formData.valid">Create</button>
+    </form>
+  </div>
