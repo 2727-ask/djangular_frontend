@@ -1,6 +1,10 @@
 <div class="container category mt-5">
-  <h3>Category</h3>
+  <div class="row">
+    <div class="col-6 col-md-6 col-sm-6"><h3>Category</h3></div>
+    <div class="col-12 col-md-6 col-sm-6"><app-search-category></app-search-category></div>
+  </div>
   <hr/>
+
   <div class="row">
     <div class="col-sm-3 bg-light p-3 border">
       <form [formGroup]="category" (ngSubmit)="onSubmit()">
@@ -39,43 +43,39 @@
         >
           Create
         </button>
-        <button
-        type="button"
-        class="btn btn-info mx-2"
-        type="submit"
-        [disabled]="!category.valid"
-      >
-        Update
-      </button>
       </form>
     </div>
     <div class="col-sm-9 bg-light p-3 border">
-      <b><u>Categories</u></b>
-      <table class="table table-striped table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Name</th>
-            <th scope="col">Actions</th>
-            <th scope="col">Count</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let category of categories ">
-            <th scope="row">{{category.id}}</th>
-            <td>{{category.title}}</td>
-            <td>
-              <a type="button" (click)="onUpdate(category.id,category.title,category.description)" class="btn btn-info btn-sm">
-                <i class="bi bi-pencil"></i>
-              </a>
-              <button type="button" class="btn btn-danger btn-sm mx-2">
-                <i class="bi bi-trash"></i>
-              </button>
-            </td>
-            <td>10</td>
-          </tr>
-        </tbody>
-      </table>
+      <b><u>Categories</u></b
+      ><br />
+      <!-- <app-loader></app-loader> -->
+      <div class="tableFixHead">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Actions</th>
+              <th scope="col">Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let category of categories; let index = index">
+              <th scope="row">{{ index+1 }}</th>
+              <td>{{ category.title }}</td>
+              <td>
+                <app-edit-category (updateCategoryEvent)="addItem($event)" [index]="index" [id]="category.id" [title]="category.title" [description]="category.description"></app-edit-category>
+                <app-delete-category (deleteCategoryEvent)="deleteItem($event)" [index]="index" [id]="category.id" [title]="category.title"></app-delete-category>
+              </td>
+              <td>10</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="container-fluid">
+          <app-paginator></app-paginator>
+        </div>
+      </div>
     </div>
   </div>
+  <!-- <p-toast></p-toast> -->
 </div>

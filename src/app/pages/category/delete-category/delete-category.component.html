@@ -1,0 +1,28 @@
+<button type="button" (click)="openModal(id,title,deleteModal)" class="btn btn-danger btn-sm mx-2">
+  <i class="bi bi-trash"></i>
+</button>
+<!-- Vertically centered modal -->
+<div class="modal" id="deleteModal" tabindex="-1" #deleteModal>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delete Category</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Are You Sure You Want To Delete Category: <b>{{title}}</b></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-danger" (click)="onDelete(id,index)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

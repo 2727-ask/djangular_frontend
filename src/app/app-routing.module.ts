@@ -8,14 +8,14 @@ import { CategoryComponent } from './pages/category/category.component';
 import { EditCategoryComponent } from './pages/category/edit-category/edit-category.component'
 
 const routes: Routes = [
-  { path: '', redirectTo: '/posts', pathMatch: 'full' },
+  // { path: '', redirectTo: '/posts', pathMatch: 'full' },
   { path: 'dashboard', component: AppComponent },
   { path: 'posts', component: PostsComponent },
   { path: 'create', component: CreateComponent },
   { path: 'media', component: MediaComponent },
   { path: 'category', component: CategoryComponent },
   { path: 'editcategory', component: EditCategoryComponent },
-
+  { path: 'auth', loadChildren: () => import('./auth/auth.module').then(o => o.AuthModule) }
 ];
 
 
