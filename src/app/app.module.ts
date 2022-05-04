@@ -21,6 +21,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { NoConnectionComponent } from './components/no-connection/no-connection.component';
 import { DeleteCategoryComponent } from './pages/category/delete-category/delete-category.component';
 import { SearchCategoryComponent } from './pages/category/search-category/search-category.component';
+import { DisplayCardComponent } from './components/display-card/display-card.component';
 
 
 
@@ -42,6 +43,7 @@ import { SearchCategoryComponent } from './pages/category/search-category/search
     NoConnectionComponent,
     DeleteCategoryComponent,
     SearchCategoryComponent,
+    DisplayCardComponent,
 
   ],
   imports: [
