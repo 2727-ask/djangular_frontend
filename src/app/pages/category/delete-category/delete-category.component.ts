@@ -23,7 +23,6 @@ export class DeleteCategoryComponent implements OnInit {
   }
 
   openModal(id: number, title: string, element: any) {
-    console.log(id, title);
     let modal = new bootstrap.Modal(element);
     this.modal = modal;
     modal.show();

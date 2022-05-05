@@ -24,15 +24,6 @@ export class CategoryComponent implements OnInit {
     description: new FormControl("")
   });
 
-  addItem(newCaregoryItem: any) {
-    this.categories.splice(newCaregoryItem.index,1,newCaregoryItem);
-  }
-
-  deleteItem(deleteCategory: any){
-    this.categories.splice(deleteCategory.index,1);
-  }
-
-
   ngOnInit(): void {
     this.categoryService.getCategories().subscribe(value => {
       this.categories = value;
@@ -49,7 +40,12 @@ export class CategoryComponent implements OnInit {
       });
   }
 
-  onUpdate(id: any, title: string, description: string) {
-    this.category.setValue({ title: title, description: description });
+  addItem(newCaregoryItem: any) {
+    this.categories.splice(newCaregoryItem.index,1,newCaregoryItem);
   }
+
+  deleteItem(deleteCategory: any){
+    this.categories.splice(deleteCategory.index,1);
+  }
+
 }
