@@ -1,8 +1,4 @@
-
-.font-gta{
-    @font-face {
-        font-family: pricedow;
-        src: url('src/assets/fonts/pricedow.ttf')
-    }
-
+.login-container{
+    display: grid;
+    place-items: center;
 }

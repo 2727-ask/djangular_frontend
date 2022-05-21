@@ -25,7 +25,6 @@ import { DisplayCardComponent } from './components/display-card/display-card.com
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +43,6 @@ import { DisplayCardComponent } from './components/display-card/display-card.com
     DeleteCategoryComponent,
     SearchCategoryComponent,
     DisplayCardComponent,
-
   ],
   imports: [
     BrowserModule,

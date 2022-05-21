@@ -1,0 +1,109 @@
+<div class="container mt-3">
+  <div class="page-header">
+    <h1 class="page-heading">Categories</h1>
+  </div>
+  <section>
+    <div class="row mb-5">
+      <div class="col-lg-4">
+        <div class="card mb-4 mb-lg-0 category-card">
+          <div class="card-body">
+            <form [formGroup]="categoryData">
+              <div class="mb-4">
+                <label class="form-label" for="categoryName">Name</label>
+                <input class="form-control" id="categoryName" type="text" formControlName="title" required ngModel>
+                <div class="form-text">
+                  The name is how it appears on your site.
+                </div>
+              </div>
+              <div class="mb-4">
+                <label class="form-label" for="categoryDescription">Description</label>
+                <textarea class="form-control" id="categoryDescription" formControlName="description" ngModel></textarea>
+                <div class="form-text">
+                  The description is not prominent by default; however, some
+                  themes may show it.
+                </div>
+              </div>
+              <button class="btn btn-primary mb-4" [disabled]="!categoryData.valid">Add Category</button>
+            </form>
+            
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="row">
+          <div class="col-4">
+            <select name="" id="" class="form-select">
+              <option value="1">Bulk Action</option>
+              <option value="2">Delete Selected</option>
+            </select>
+          </div>
+          <div class="col-4">
+            <button class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+
+        <table class="table table-striped my-2">
+          <thead class="bg-dark">
+            <tr>
+              <th scope="col" style="color: white">#</th>
+              <th scope="col" style="color: white">Category</th>
+              <th scope="col" style="color: white">Description</th>
+              <th scope="col" style="color: white">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><input type="checkbox" name="" id="" /></th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>
+                <app-modal categoryTitle="Kaise Ho Bhrata"></app-modal>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"><input type="checkbox" name="" id="" /></th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>
+                <app-modal categoryTitle="Kaise Ho Bhrata"></app-modal>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"><input type="checkbox" name="" id="" /></th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>
+                <app-modal categoryTitle="Kaise Ho Bhrata"></app-modal>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"><input type="checkbox" name="" id="" /></th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>
+                <app-modal categoryTitle="Kaise Ho Bhrata"></app-modal>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"><input type="checkbox" name="" id="" /></th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>
+                <app-modal categoryTitle="Kaise Ho Bhrata"></app-modal>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"><input type="checkbox" name="" id="" /></th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>
+                <app-modal categoryTitle="Kaise Ho"></app-modal>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>

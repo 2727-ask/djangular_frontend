@@ -1,0 +1,15 @@
+.category-card{
+    border-radius:20px;
+}
+
+.categories-card{
+    border-radius:20px;
+}
+
+.dataTable-dropdown{
+    width:100%;
+}
+
+input.ng-invalid.ng-touched{
+    border:1px solid red;
+}

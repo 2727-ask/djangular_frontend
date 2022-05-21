@@ -1,10 +1,10 @@
 <div class="side-panel p-2">
     <div class="container p-2">
         <h2 style="color:white">LinkCode</h2>
-        <a [routerLink]="['/posts']" class="btn action-button">Post</a>
-        <a [routerLink]="['/create']" class="btn action-button">Create</a>
-        <a [routerLink]="['/media']" class="btn action-button">Media</a>
-        <a [routerLink]="['/category']" class="btn action-button">Category</a>
+        <a routerLink="/dashboard/posts" class="btn action-button">Post</a>
+        <a [routerLink]="['create']" class="btn action-button">Create</a>
+        <a [routerLink]="['dashboard/media']" class="btn action-button">Media</a>
+        <a [routerLink]="['dashboard/category']" class="btn action-button">Category</a>
         <!-- <a routerLink="#" class="btn action-button">Tags</a>
         <a routerLink="#" class="btn action-button">Comments</a>
         <a routerLink="#" class="btn action-button">Settings</a> -->
