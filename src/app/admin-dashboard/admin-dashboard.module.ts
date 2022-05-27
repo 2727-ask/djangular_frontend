@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { AdminDashboardRoutingModule } from './admin-dashboard-routing.module';
 import { CategoryComponent } from './category/category.component';
 import { DashboardUiComponent } from './dashboard-ui/dashboard-ui.component';
@@ -27,7 +29,8 @@ import { ModalComponent } from './component/modal/modal.component';
     CommonModule,
     AdminDashboardRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InfiniteScrollModule
   ]
 })
 export class AdminDashboardModule { }
