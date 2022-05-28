@@ -20,4 +20,4 @@ input.ng-invalid.ng-touched{
 /* Just common table stuff. Really. */
 table  { border-collapse: collapse; width: 100%; }
 th, td { padding: 8px 16px; }
-th     { background:#eee; } 
+th     { background:rgba(0, 0, 0, 0); } 

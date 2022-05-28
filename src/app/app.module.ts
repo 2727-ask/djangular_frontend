@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule,HTTP_INTERCEPTORS } from "@angular/common/http";
 import { ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -22,6 +22,7 @@ import { NoConnectionComponent } from './components/no-connection/no-connection.
 import { DeleteCategoryComponent } from './pages/category/delete-category/delete-category.component';
 import { SearchCategoryComponent } from './pages/category/search-category/search-category.component';
 import { DisplayCardComponent } from './components/display-card/display-card.component';
+import { CategoryInterceptorInterceptor } from './admin-dashboard/interceptors/category-interceptor.interceptor'
 
 
 
@@ -53,7 +54,13 @@ import { DisplayCardComponent } from './components/display-card/display-card.com
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CategoryInterceptorInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

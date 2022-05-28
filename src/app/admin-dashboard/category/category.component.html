@@ -10,37 +10,21 @@
             <form [formGroup]="categoryData">
               <div class="mb-4">
                 <label class="form-label" for="categoryName">Name</label>
-                <input
-                  class="form-control"
-                  id="categoryName"
-                  type="text"
-                  formControlName="title"
-                  required
-                  ngModel
-                />
+                <input class="form-control" id="categoryName" type="text" formControlName="title" required ngModel />
                 <div class="form-text">
                   The name is how it appears on your site.
                 </div>
               </div>
               <div class="mb-4">
-                <label class="form-label" for="categoryDescription"
-                  >Description</label
-                >
-                <textarea
-                  class="form-control"
-                  id="categoryDescription"
-                  formControlName="description"
-                  ngModel
-                ></textarea>
+                <label class="form-label" for="categoryDescription">Description</label>
+                <textarea class="form-control" id="categoryDescription" formControlName="description"
+                  ngModel></textarea>
                 <div class="form-text">
                   The description is not prominent by default; however, some
                   themes may show it.
                 </div>
               </div>
-              <button
-                class="btn btn-primary mb-4"
-                [disabled]="!categoryData.valid"
-              >
+              <button class="btn btn-primary mb-4" [disabled]="!categoryData.valid">
                 Add Category
               </button>
             </form>
@@ -60,43 +44,51 @@
           </div>
         </div>
         <div class="tableFixHead my-5">
-          <div
-            infiniteScroll
-            [infiniteScrollContainer]="'.tableFixHead'"
-            [infiniteScrollDistance]="2"
-            [infiniteScrollThrottle]="50"
-            [fromRoot]="true"
-            (scrolled)="onScroll()"
-          >
+          <div infiniteScroll [infiniteScrollContainer]="'.tableFixHead'" [infiniteScrollDistance]="1"
+            [infiniteScrollThrottle]="50" [fromRoot]="true" (scrolled)="onScroll()">
             <table class="table table-striped my-2">
               <thead class="bg-dark">
                 <tr>
-                  <th scope="col" style="color: white">#</th>
-                  <th scope="col" style="color: white">Category</th>
-                  <th scope="col" style="color: white">Description</th>
-                  <th scope="col" style="color: white">Action</th>
+                  <th scope="col" class="bg-dark" style="color: white">#</th>
+                  <th scope="col" class="bg-dark" style="color: white">
+                    Category
+                  </th>
+                  <th scope="col" class="bg-dark" style="color: white">
+                    Description
+                  </th>
+                  <th scope="col" class="bg-dark" style="color: white">
+                    Action
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let x of categoriesList">
                   <th scope="row"><input type="checkbox" name="" id="" /></th>
-                  <td>{{x.title}}</td>
+                  <td>{{ x.title }}</td>
                   <td>Otto</td>
                   <td>
                     <app-modal categoryTitle="Kaise Ho"></app-modal>
                   </td>
                 </tr>
                 <tr>
-                  <th scope="row"><input type="checkbox" name="" id="" /></th>
+                  <th></th>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
               </tbody>
             </table>
+            <br>
+            <br>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center mb-5">
+          <div [ngClass]="{'spinner-border':isLoading == true}" role="status">
+            <span class="visually-hidden">Loading...</span>
           </div>
         </div>
       </div>
     </div>
+    
   </section>
 </div>
