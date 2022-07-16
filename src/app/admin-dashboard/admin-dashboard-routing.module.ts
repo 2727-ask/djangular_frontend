@@ -5,6 +5,7 @@ import { MediaComponent } from "./media/media.component";
 import { PostsComponent } from "./posts/posts.component";
 import { VideosComponent } from "./videos/videos.component";
 import { DashboardUiComponent } from "./dashboard-ui/dashboard-ui.component";
+import { CreatePostsComponent } from "./posts/create-posts/create-posts.component";
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: "categorys", component: CategoryComponent },
       { path: "videos", component: VideosComponent },
       { path: "media", component: MediaComponent },
+      { path: "posts/create", component: CreatePostsComponent },
     ]
   }
 ];

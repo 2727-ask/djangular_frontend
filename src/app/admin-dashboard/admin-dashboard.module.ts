@@ -11,7 +11,8 @@ import { MediaComponent } from "./media/media.component";
 import { PostsComponent } from "./posts/posts.component";
 import { VideosComponent } from "./videos/videos.component";
 import { ModalComponent } from "./component/modal/modal.component";
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { CKEditorModule } from 'ckeditor4-angular';
+import { CreatePostsComponent } from './posts/create-posts/create-posts.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     MediaComponent,
     PostsComponent,
     VideosComponent,
-    ModalComponent
+    ModalComponent,
+    CreatePostsComponent
   ],
   imports: [
     CommonModule,

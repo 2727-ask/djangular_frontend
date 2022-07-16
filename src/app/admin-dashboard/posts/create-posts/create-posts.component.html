@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <form [formGroup]="post" (ngSubmit)="handle_save_post(post)">
+        <div class="row">
+            <div class="col">
+                <h3 class="align-middle">Create Posts</h3>
+            </div>
+            <div class="col"><button type="submit" class="btn btn-success align-middle">Save <i
+                        class="bi bi-node-plus-fill"></i></button></div>
+        </div>
+        <div class="mt-2">
+            <input class="form-control form-control-lg" type="text" placeholder="Enter Post Title"
+                aria-label=".form-control-lg example" formControlName="title" required>
+            <div class="mt-3">
+                <ckeditor formControlName="content"></ckeditor>
+            </div>
+        </div>
+        <div class="config mt-2">
+            <div class="row">
+                <div class="col col-md-4">
+                    <select class="form-select" aria-label="Default select example" formControlName="category" required>
+                        <option selected>Select a Category</option>
+                        <option *ngFor="let category of categories" (value)="category.id">{{category.title}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
