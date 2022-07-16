@@ -23,6 +23,7 @@ import { DeleteCategoryComponent } from './pages/category/delete-category/delete
 import { SearchCategoryComponent } from './pages/category/search-category/search-category.component';
 import { DisplayCardComponent } from './components/display-card/display-card.component';
 import { CategoryInterceptorInterceptor } from './admin-dashboard/interceptors/category-interceptor.interceptor'
+import { HandleError } from "./helpers/handleError";
 
 
 
@@ -59,7 +60,8 @@ import { CategoryInterceptorInterceptor } from './admin-dashboard/interceptors/c
       provide: HTTP_INTERCEPTORS,
       useClass: CategoryInterceptorInterceptor,
       multi: true
-    }
+    },
+    HandleError
   ],
   bootstrap: [AppComponent]
 })

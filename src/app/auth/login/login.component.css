@@ -2,3 +2,7 @@
     display: grid;
     place-items: center;
 }
+
+.ng-invalid .ng-touched{
+    border: 1px solid red !important;
+}

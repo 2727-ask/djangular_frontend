@@ -1,14 +1,33 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import { environment } from "../../environments/environment"
+import { HandleErrorService } from '../helpers/handle-error.service';
+import jwt_decode from "jwt-decode";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  isAuthenticated:boolean = false;
-  constructor() { } 
+  isAuthenticated: boolean = false;
+  constructor(private http: HttpClient, public handleError: HandleErrorService) {
+  }
 
 
+  loginUser(username: String, password: String) {
+    console.log("Username is", username, password);
+
+    return this.http.post(environment.baseUrl + "/auth-jwt", {
+      "username": username,
+      "password": password
+    }).pipe(catchError((error: HttpErrorResponse) => this.handleError.handleError(error,"Inalid Username Or Password")));
+  }
+
+  isLoggedIn(){
+    var decoded:any = jwt_decode(localStorage.getItem("token")!);
+    return (decoded.exp > Date.now() / 1000);
+  }
 
 
 

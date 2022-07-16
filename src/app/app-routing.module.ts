@@ -7,6 +7,7 @@ import { CreateComponent } from "./pages/create/create.component";
 import { MediaComponent } from "./pages/media/media.component";
 import { CategoryComponent } from "./pages/category/category.component";
 import { EditCategoryComponent } from "./pages/category/edit-category/edit-category.component";
+import { AuthGuard } from "./guards/auth.guard";
 
 const routes: Routes = [
   // { path: '', redirectTo: '/posts', pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Routes = [
   },
   {
     path: "dashboard",
+    canActivate: [AuthGuard], 
     loadChildren: () => import("./admin-dashboard/admin-dashboard.module").then(o => o.AdminDashboardModule)
   }
 ];
