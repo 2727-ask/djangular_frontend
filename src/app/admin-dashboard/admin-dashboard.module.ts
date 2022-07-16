@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { AdminDashboardRoutingModule } from "./admin-dashboard-routing.module";
@@ -12,8 +11,7 @@ import { MediaComponent } from "./media/media.component";
 import { PostsComponent } from "./posts/posts.component";
 import { VideosComponent } from "./videos/videos.component";
 import { ModalComponent } from "./component/modal/modal.component";
-import { CategoryService } from "./services/category.service";
-import { CategoryInterceptorInterceptor } from "./interceptors/category-interceptor.interceptor";
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   declarations: [
@@ -31,7 +29,8 @@ import { CategoryInterceptorInterceptor } from "./interceptors/category-intercep
     AdminDashboardRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    CKEditorModule
   ]
 })
 export class AdminDashboardModule {}

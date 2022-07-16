@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
+import jwt_decode from "jwt-decode";
 import { environment } from "../../environments/environment"
 import { HandleErrorService } from '../helpers/handle-error.service';
-import jwt_decode from "jwt-decode";
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -11,8 +12,7 @@ import jwt_decode from "jwt-decode";
 })
 export class AuthService {
   isAuthenticated: boolean = false;
-  constructor(private http: HttpClient, public handleError: HandleErrorService) {
-  }
+  constructor(private http: HttpClient, public handleError: HandleErrorService, private router: Router) {}
 
 
   loginUser(username: String, password: String) {
@@ -22,6 +22,12 @@ export class AuthService {
       "username": username,
       "password": password
     }).pipe(catchError((error: HttpErrorResponse) => this.handleError.handleError(error,"Inalid Username Or Password")));
+  }
+
+
+  logOutUser(){
+    localStorage.removeItem("token");
+    this.router.navigate(['/auth']);
   }
 
   isLoggedIn(){
