@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { Category } from '../../../interfaces/category';
+import { BlogpostService } from '../../services/blogpost.service';
 
 @Component({
   selector: 'app-create-posts',
@@ -9,7 +11,7 @@ import { Category } from '../../../interfaces/category';
 })
 export class CreatePostsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private blogpostservice:BlogpostService, private toastr: ToastrService) { }
 
   public model = {
     editorData: '<p>Hello, world!</p>'
@@ -50,6 +52,13 @@ export class CreatePostsComponent implements OnInit {
       console.log(post.value.title);
       console.log(post.value.category);
       console.log(post.value.content);
+      this.blogpostservice.createPost({"blog_title":post.value.title,"blog_desc":post.value.category,"content":post.value.content}).subscribe((res:any)=>{
+        console.log(res);
+        console.log("Success");
+
+        
+              
+      })
     }
   }
 

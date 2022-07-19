@@ -1,0 +1,18 @@
+.d-input{
+    width: 70%;
+    background-color:#f6faf8 ;
+}
+
+.d-input::selection{
+    background-color:#fff ;
+}
+
+.note {
+    min-height: 17px;
+    margin: 4px 0 2px;
+    font-size: 12px;
+    color: var(--color-fg-muted);
+}
+.ng-touched .ng-invalid{
+    border: 1px solid red;
+}

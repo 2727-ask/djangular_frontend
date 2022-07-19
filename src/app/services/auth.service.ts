@@ -12,26 +12,37 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   isAuthenticated: boolean = false;
-  constructor(private http: HttpClient, public handleError: HandleErrorService, private router: Router) {}
+  constructor(private http: HttpClient, public handleError: HandleErrorService, private router: Router) { }
 
 
   loginUser(username: String, password: String) {
-    console.log("Username is", username, password);
-
     return this.http.post(environment.baseUrl + "/auth-jwt", {
       "username": username,
       "password": password
-    }).pipe(catchError((error: HttpErrorResponse) => this.handleError.handleError(error,"Inalid Username Or Password")));
+    }).pipe(catchError((error: HttpErrorResponse) => this.handleError.handleError(error)));
+  }
+
+  createUser(username: String, password: String) {
+    console.log("Username is", username, password);
+    return this.http.post(environment.baseUrl + "/api/signup/", {
+      "username": username,
+      "password": password
+    }).pipe(catchError((error: HttpErrorResponse) => this.handleError.handleError(error)));
+  }
+
+  getLoggedInUserInfo(){
+    var decoded: any = jwt_decode(localStorage.getItem("token")!);
+    return decoded;
   }
 
 
-  logOutUser(){
+  logOutUser() {
     localStorage.removeItem("token");
     this.router.navigate(['/auth']);
   }
 
-  isLoggedIn(){
-    var decoded:any = jwt_decode(localStorage.getItem("token")!);
+  isLoggedIn() {
+    var decoded: any = jwt_decode(localStorage.getItem("token")!);
     return (decoded.exp > Date.now() / 1000);
   }
 

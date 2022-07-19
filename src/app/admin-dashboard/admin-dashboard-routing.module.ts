@@ -6,6 +6,7 @@ import { PostsComponent } from "./posts/posts.component";
 import { VideosComponent } from "./videos/videos.component";
 import { DashboardUiComponent } from "./dashboard-ui/dashboard-ui.component";
 import { CreatePostsComponent } from "./posts/create-posts/create-posts.component";
+import { ProfileComponent } from "./screens/profile/profile.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
       { path: "videos", component: VideosComponent },
       { path: "media", component: MediaComponent },
       { path: "posts/create", component: CreatePostsComponent },
+      { path: "settings/profile", component: ProfileComponent }
     ]
   }
 ];
@@ -25,4 +27,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AdminDashboardRoutingModule {}
+export class AdminDashboardRoutingModule { }

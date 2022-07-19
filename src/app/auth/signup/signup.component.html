@@ -1,1 +1,29 @@
-<p>signup works!</p>
+<div class="main-section text-center d-flex justify-content-center">
+    <div class="container content">
+        <main class="form-signin w-100 m-auto">
+            <form [formGroup]="info" (ngSubmit)="handleSignUp(info)">
+                <img class="mb-3" src="https://img.icons8.com/color/144/000000/angularjs.png" alt="" width="72"
+                    height="65">
+                <h1 class="h3 mb-3 fw-normal">Create Account</h1>
+
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                        formControlName="name" required>
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                        formControlName="password" required>
+                    <label for="floatingPassword">Password</label>
+                </div>
+
+                <div class="checkbox mb-3">
+
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Create Account</button>
+                <p class="mt-5 mb-3 text-muted">Already Have An Account? <a routerLink="/auth">Log In</a></p>
+                <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
+            </form>
+        </main>
+    </div>
+</div>

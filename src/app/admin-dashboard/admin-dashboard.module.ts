@@ -13,6 +13,10 @@ import { VideosComponent } from "./videos/videos.component";
 import { ModalComponent } from "./component/modal/modal.component";
 import { CKEditorModule } from 'ckeditor4-angular';
 import { CreatePostsComponent } from './posts/create-posts/create-posts.component';
+import { ProfileComponent } from './screens/profile/profile.component';
+import { AvatarComponent } from './component/avatar/avatar.component';
+import { InputComponent } from './component/input/input.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { CreatePostsComponent } from './posts/create-posts/create-posts.componen
     PostsComponent,
     VideosComponent,
     ModalComponent,
-    CreatePostsComponent
+    CreatePostsComponent,
+    ProfileComponent,
+    AvatarComponent,
+    InputComponent,
   ],
   imports: [
     CommonModule,

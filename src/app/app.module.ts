@@ -22,8 +22,10 @@ import { NoConnectionComponent } from './components/no-connection/no-connection.
 import { DeleteCategoryComponent } from './pages/category/delete-category/delete-category.component';
 import { SearchCategoryComponent } from './pages/category/search-category/search-category.component';
 import { DisplayCardComponent } from './components/display-card/display-card.component';
-import { CategoryInterceptorInterceptor } from './admin-dashboard/interceptors/category-interceptor.interceptor'
+
 import { HandleError } from "./helpers/handleError";
+import { CategoryInterceptorInterceptor } from "./admin-dashboard/interceptors/category-interceptor.interceptor";
+import { AvatarComponent } from './components/avatar/avatar.component';
 
 
 
@@ -45,6 +47,7 @@ import { HandleError } from "./helpers/handleError";
     DeleteCategoryComponent,
     SearchCategoryComponent,
     DisplayCardComponent,
+    AvatarComponent,
   ],
   imports: [
     BrowserModule,
