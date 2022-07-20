@@ -1,0 +1,44 @@
+<a href="" data-bs-toggle="modal" (click)="openModal(id, categoryTitle, categoryModal)">
+  Update
+</a>
+<div class="modal fade" [id]="id" tabindex="-1" aria-labelledby="cateoryManipulationModal" aria-hidden="true"
+  #categoryModal>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header border-bottom-0">
+        <h5 class="modal-title">{{ categoryTitle }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <div class="card mb-4 mb-lg-0 category-card">
+          <div class="card-body">
+            <div class="mb-4">
+              <label class="form-label" for="categoryName">Name</label>
+              <input class="form-control" id="categoryName" type="text"/>
+              <div class="form-text">
+                The name is how it appears on your site.
+              </div>
+            </div>
+            <div class="mb-4">
+              <label class="form-label" for="categoryDescription">Description</label>
+              <textarea class="form-control" id="categoryDescription" name="categoryDescription"></textarea>
+              <div class="form-text">
+                The description is not prominent by default; however, some
+                themes may show it.
+              </div>
+            </div>
+            <button class="btn btn-primary mb-4">Update Category</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer flex-column border-top-0">
+        <button type="button" class="btn btn-lg btn-primary w-100 mx-0 mb-2">
+          Update
+        </button>
+        <button type="button" class="btn btn-lg btn-light w-100 mx-0" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

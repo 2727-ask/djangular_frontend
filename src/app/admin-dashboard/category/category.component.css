@@ -1,0 +1,23 @@
+.category-card{
+    border-radius:20px;
+}
+
+.categories-card{
+    border-radius:20px;
+}
+
+.dataTable-dropdown{
+    width:100%;
+}
+
+input.ng-invalid.ng-touched{
+    border:1px solid red;
+}
+
+.tableFixHead          { overflow: auto; height: 60vh; }
+.tableFixHead thead th { position: sticky; top: 0; z-index: 1; }
+
+/* Just common table stuff. Really. */
+table  { border-collapse: collapse; width: 100%; }
+th, td { padding: 8px 16px; }
+th     { background:rgba(0, 0, 0, 0); } 
