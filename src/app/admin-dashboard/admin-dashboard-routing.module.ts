@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { CategoryComponent } from "./category/category.component";
 import { MediaComponent } from "./media/media.component";
 import { PostsComponent } from "./posts/posts.component";
+import { PostsOnboardingComponent } from "./posts/posts-onboarding/posts-onboarding.component"
 import { VideosComponent } from "./videos/videos.component";
 import { DashboardUiComponent } from "./dashboard-ui/dashboard-ui.component";
 import { CreatePostsComponent } from "./posts/create-posts/create-posts.component";
@@ -14,6 +15,7 @@ const routes: Routes = [
     component: DashboardUiComponent,
     children: [
       { path: "posts", component: PostsComponent },
+      { path: "posts/initiate", component: PostsOnboardingComponent },
       { path: "categorys", component: CategoryComponent },
       { path: "videos", component: VideosComponent },
       { path: "media", component: MediaComponent },

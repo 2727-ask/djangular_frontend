@@ -16,6 +16,7 @@ import { CreatePostsComponent } from './posts/create-posts/create-posts.componen
 import { ProfileComponent } from './screens/profile/profile.component';
 import { AvatarComponent } from './component/avatar/avatar.component';
 import { InputComponent } from './component/input/input.component';
+import { PostsOnboardingComponent } from './posts/posts-onboarding/posts-onboarding.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { InputComponent } from './component/input/input.component';
     ProfileComponent,
     AvatarComponent,
     InputComponent,
+    PostsOnboardingComponent,
   ],
   imports: [
     CommonModule,
