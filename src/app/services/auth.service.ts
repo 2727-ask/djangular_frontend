@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
+
   isAuthenticated: boolean = false;
   constructor(private http: HttpClient, public handleError: HandleErrorService, private router: Router) { }
 
@@ -30,7 +31,7 @@ export class AuthService {
     }).pipe(catchError((error: HttpErrorResponse) => this.handleError.handleError(error)));
   }
 
-  getLoggedInUserInfo(){
+  getLoggedInUserInfo() {
     var decoded: any = jwt_decode(localStorage.getItem("token")!);
     return decoded;
   }
@@ -45,6 +46,7 @@ export class AuthService {
     var decoded: any = jwt_decode(localStorage.getItem("token")!);
     return (decoded.exp > Date.now() / 1000);
   }
+
 
 
 
